@@ -431,7 +431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356066223
 GameObject:
@@ -693,7 +693,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1085,7 +1085,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4716426382591994, guid: 9e98094b17a2767419c7074af999ec91, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e98094b17a2767419c7074af999ec91, type: 2}
@@ -1099,15 +1099,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4240809105897784, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.57
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 4240809105897784, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 12.35
       objectReference: {fileID: 0}
     - target: {fileID: 4240809105897784, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4240809105897784, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1127,9 +1127,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4240809105897784, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136236894700611304, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: fac44ae7621e70540b2bd332db5137f5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &726331517
@@ -1743,7 +1744,48 @@ Transform:
   - {fileID: 564482890}
   - {fileID: 601852290}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1836812750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1836812752}
+  - component: {fileID: 1836812751}
+  m_Layer: 0
+  m_Name: Dead Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1836812751
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836812750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 2, z: 7}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1836812752
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836812750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 12.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2068987772
 Prefab:
@@ -1782,7 +1824,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4226655475010492, guid: 7b78bb9e9162d9d43a821067fb2ce52c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4226655475010492, guid: 7b78bb9e9162d9d43a821067fb2ce52c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1893,7 +1935,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4746174494829832, guid: fd6dc864d31b850449c2de216831c8d8, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114088425718960170, guid: fd6dc864d31b850449c2de216831c8d8,
         type: 2}
