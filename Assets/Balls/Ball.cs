@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public MyColor ballColor;
+    //TODO 考慮改成重力往下降控制最高速度
+    public MyColor ballColor;  //球的顏色
     public float fallingSpeed = 0.1f;  //落下速度
 
     private GameManager gameManager;
-    private Rigidbody ball;
+    //private Rigidbody ball;
 
     private void Start()
     {
-        ball = GetComponent<Rigidbody>();
+        //ball = GetComponent<Rigidbody>();
         gameManager = FindObjectOfType<GameManager>();
         InvokeRepeating("Drop", 0f, Time.deltaTime);  //球一產生即用固定速度掉落
     }
@@ -34,6 +35,7 @@ public class Ball : MonoBehaviour
 
     private void Drop()  //落下函式
     {
+        //TODO 可新增球旋轉動畫
         transform.Translate(Vector3.down * fallingSpeed);
     }
 }

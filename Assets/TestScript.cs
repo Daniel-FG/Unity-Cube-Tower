@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
-
-    private void OnCollisionEnter(Collision collision)
+    public int[,] vs = new int[16, 12];
+    private void Start()
     {
-        print(collision.gameObject.name);
+        print(vs.LongLength);
     }
 }
