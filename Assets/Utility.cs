@@ -1,6 +1,7 @@
-﻿public enum Layer
+﻿public enum MyColor
 {
-    red = 8,
-    green = 9,
-    blue = 10
+    red = 0,
+    green = 1,
+    blue = 2
 }
+

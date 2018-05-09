@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    public MyColor cubeColor;
+
     [SerializeField] private Vector3 bigSize = new Vector3(1.2f, 1.2f, 1.2f);
     private Rigidbody rigidBody;
     private bool hasBall = false;  //方塊內部是否有球
+    
     
 
     private void Start()
@@ -16,10 +19,14 @@ public class Cube : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(gameObject.layer == collision.gameObject.layer && !hasBall)  //如果撞到一樣顏色而且內部沒有球的話
+        Ball ball = collision.gameObject.GetComponent<Ball>();
+        if (ball)
         {
-            Destroy(collision.gameObject);  //摧毀球
-            GrowBall();  //讓方塊內部生出球
+            if (cubeColor == ball.ballColor && !hasBall)  //如果撞到一樣顏色而且內部沒有球的話
+            {
+                Destroy(collision.gameObject);  //摧毀球
+                GrowBall();  //讓方塊內部生出球
+            }
         }
     }
 

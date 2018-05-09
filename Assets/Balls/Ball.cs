@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public MyColor ballColor;
     public float fallingSpeed = 0.1f;  //落下速度
 
     private GameManager gameManager;
