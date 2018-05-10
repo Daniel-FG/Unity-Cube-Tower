@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int ballCount = 0;
-    public const int xRange = 16;
-    public const int yRange = 13;
-    public static int[,] game = new int[xRange, yRange];
+    public const int xRange = 16;  //一整圈有16個方塊
+    public const int yRange = 13;  //排滿整座塔有12個方塊  第13個造成遊戲結束
+    public static int[,] game = new int[xRange, yRange];  //代表遊戲的二維陣列
     public GameObject[] balls;  //用來存放要產生的不同種類的球
     
     private GameObject parent;  //整理用的empty GameObject
@@ -16,13 +16,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         print("Intial matrix:");
-        game[3, 11] = 1;
+        //game[3, 11] = 1;
         PrintMatrix();
     }
     private void Start()
     {
         tower = FindObjectOfType<Tower>();
-        tower.NewCubeCreated += CheckHeight;
+        tower.NewCubeCreated += CheckHeight;  //將CheckHeight()加入委派清單
 
         parent = GameObject.Find("Balls");  //尋找名稱為Balls的GameObject
         if (parent == null)  //如果沒找到就新建一個
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         ballCount++;  //產生球數+1
     }
 
-    public void PrintMatrix()
+    public void PrintMatrix()  //列印出由上到下 (塔的觀點) 的二維陣列
     {
         for(int i = yRange - 1; i >= 0; i--)
         {
@@ -53,11 +53,11 @@ public class GameManager : MonoBehaviour
         }
         print("=======================");
     }
-    private void CheckHeight()
+    private void CheckHeight()  //檢查高度是否造成遊戲結束
     {
         for(int i = 0; i < xRange; i++)
         {
-            if (game[i, 12] != 0)
+            if (game[i, 12] != 0)  //如果最上方有值則造成遊戲結束
             {
                 Debug.Log("Game Over");
             }
