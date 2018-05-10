@@ -42,5 +42,10 @@ public class Cube : MonoBehaviour
     private void OnMouseDown()
     {
         //pressed cube
+        //TODO 回傳被按下方塊位置給GameManager
+        if(hasBall)
+        {
+            Destroy(gameObject);
+        }
     }
 }
