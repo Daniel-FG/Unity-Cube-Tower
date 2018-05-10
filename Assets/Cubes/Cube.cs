@@ -43,9 +43,9 @@ public class Cube : MonoBehaviour
     {
         //pressed cube
         //TODO 回傳被按下方塊位置給GameManager
-        if(hasBall)
+        if(hasBall)  //如果內部有球
         {
-            Destroy(gameObject);
+            Destroy(gameObject);  //點擊之後摧毀該方塊
         }
     }
 }
