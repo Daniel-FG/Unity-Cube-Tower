@@ -10,11 +10,12 @@ public class Tower : MonoBehaviour
 
     private GameManager gameManager;
     //最底層那圈的各個方塊位置
-    private Vector3[] bottomArray = { new Vector3(6.3f, 1f, 0f), new Vector3(5.87f, 1f, 2.36f), new Vector3(4.5f, 1f, 4.4f), new Vector3(2.4f, 1f, 5.6f),
+
+    public static Vector3[] bottomArray = new Vector3[16] { new Vector3(6.3f, 1f, 0f), new Vector3(5.87f, 1f, 2.36f), new Vector3(4.5f, 1f, 4.4f), new Vector3(2.4f, 1f, 5.6f),
         new Vector3(0f, 1f, 6.2f), new Vector3(-2.4f, 1f, 5.6f), new Vector3(-4.5f, 1f, 4.4f), new Vector3(-5.87f, 1f, 2.36f),
         new Vector3(-6.3f, 1f, 0f), new Vector3(-5.87f, 1f, -2.36f), new Vector3(-4.5f, 1f, -4.4f), new Vector3(-2.4f, 1f, -5.6f),
         new Vector3(0f, 1f, -6.2f), new Vector3(2.4f, 1f, -5.6f), new Vector3(4.5f, 1f, -4.4f), new Vector3(5.87f, 1f, -2.36f) };
-    private Vector3 yOffset = new Vector3(0f, 2.1f, 0f);  //每次要增加的y值
+    public static Vector3 yOffset = new Vector3(0f, 2.1f, 0f);  //每次要增加的y值
     private GameObject parent;  //整理用的empty GameObject
 
     void Start ()
@@ -57,7 +58,7 @@ public class Tower : MonoBehaviour
         {
             GameManager.game[i, 0] = 1;  //最下層的全部設成有值
         }
-        gameManager.PrintMatrix();
+        //gameManager.PrintMatrix();
         NewCubeCreated();  //呼叫委派清單
     }
 }

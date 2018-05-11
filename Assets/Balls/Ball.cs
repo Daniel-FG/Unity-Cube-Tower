@@ -10,10 +10,12 @@ public class Ball : MonoBehaviour
     private GameManager gameManager;
     private Rigidbody ball;
     private bool isFreeBall = true;  //是否為自由球  有自己的落下速度
-    
+    private Tower tower;
 
     private void Start()
     {
+        //tower = GetComponent<Tower>();
+        //tower.NewCubeCreated += 
         ball = GetComponent<Rigidbody>();
         gameManager = FindObjectOfType<GameManager>();
         ball.useGravity = false;  //有自己的落下速度  不使用重力
@@ -22,7 +24,7 @@ public class Ball : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(ball.velocity.y != fallingSpeed)  //使用物理引擎給落下速度
+        if(ball.velocity.y != fallingSpeed && isFreeBall)  //使用物理引擎給落下速度
         {
             ball.velocity = new Vector3(0f, -fallingSpeed, 0f);
         }
@@ -34,6 +36,7 @@ public class Ball : MonoBehaviour
         if (Vector3.Dot(Vector3.down, direction) > 0)  //如果方向向量與球落下的方向內積是正數則在下方
         {
             //TODO 考慮加入撞擊後擠壓動畫
+            //TODO 球落地之後觸發GameManager的CheckHeight()
             if (isFreeBall)
             {
                 gameManager.CreateBall();
@@ -47,6 +50,7 @@ public class Ball : MonoBehaviour
         }
     }
 
+    
     //private void Drop()  //落下函式
     //{
     //    //TODO 可新增球旋轉動畫
